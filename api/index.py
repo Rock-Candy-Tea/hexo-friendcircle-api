@@ -56,13 +56,13 @@ def getdata():
         'last_updated_time': last_updated_time
     }
     
-    acticle_data = []
+    article_data = []
     for item in query_list:
         itemlist = {}
         for elem in list:
             itemlist[elem] = item.get(elem)
-        acticle_data.append(itemlist)
-    api_json['acticle_data'] = acticle_data
+        article_data.append(itemlist)
+    api_json['article_data'] = article_data
 
     return api_json
 
