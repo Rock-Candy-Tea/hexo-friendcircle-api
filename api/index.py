@@ -28,7 +28,7 @@ def getdata():
     query.limit(1000)
 
     # Choose class
-    query.select('title','time','updated','link','author','headimg','createdAt')
+    query.select('title','created','updated','link','author','avatar','createdAt')
 
     # Execute the query, returning result
     query_list = query.find()
