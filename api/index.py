@@ -60,7 +60,12 @@ def getdata():
     for item in query_list:
         itemlist = {}
         for elem in list:
-            itemlist[elem] = item.get(elem)
+            if elem == 'created':
+                itemlist[elem] = item.get('time')
+            elif elem == 'avatar':
+                itemlist[elem] = item.get('headimg')
+            else:
+                itemlist[elem] = item.get(elem)
         article_data.append(itemlist)
     api_json['article_data'] = article_data
 
