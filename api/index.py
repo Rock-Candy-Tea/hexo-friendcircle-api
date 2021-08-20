@@ -11,7 +11,7 @@ import os
 from leancloud import user
 
 def getdata():
-    list = ['title','time','updated','link','author','headimg']
+    list = ['title','created','updated','link','author','avatar']
     # Verify key
     leancloud.init(os.environ["LEANCLOUD_ID"], os.environ["LEANCLOUD_KEY"])
 
@@ -28,7 +28,7 @@ def getdata():
     query.limit(1000)
 
     # Choose class
-    query.select('title','created','updated','link','author','avatar','createdAt')
+    query.select('title','time','updated','link','author','headimg','createdAt')
 
     # Execute the query, returning result
     query_list = query.find()
