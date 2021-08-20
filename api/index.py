@@ -45,14 +45,14 @@ def getdata():
     friends_num = len(query_list_user)
     active_num = len(set([item.get('author') for item in query_list]))
     error_num = len([friend for friend in query_list_user if friend.get('error') == 'true'])
-    acticle_num = len(query_list)
+    article_num = len(query_list)
     last_updated_time = max([item.get('createdAt').strftime('%Y-%m-%d %H:%M:%S') for item in query_list])
     
     api_json['statistical_data'] = {
         'friends_num': friends_num,
         'active_num': active_num,
         'error_num': error_num,
-        'acticle_num': acticle_num,
+        'article_num': article_num,
         'last_updated_time': last_updated_time
     }
     
