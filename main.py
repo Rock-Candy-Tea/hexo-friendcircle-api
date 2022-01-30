@@ -25,8 +25,7 @@ app.add_middleware(
 )
 
 def initleancloud():
-    leancloud.init('9IXXGBgDfpll1oh3mX6ktaM9-MdYXbMMI', 'r5FYd3er2o0YTFPxdeeXPOdH')
-    # leancloud.init(os.environ["LEANCLOUD_ID"], os.environ["LEANCLOUD_KEY"])
+    leancloud.init(os.environ["LEANCLOUD_ID"], os.environ["LEANCLOUD_KEY"])
 
 @app.get("/api")
 async def all(start: int = 0, end: int = -1, rule: str = "updated"):
